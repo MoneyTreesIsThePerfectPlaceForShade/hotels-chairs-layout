@@ -1,0 +1,281 @@
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+///////////////////////////
+// НЕПОСРЕДСТВЕННО СТИЛИ //
+///////////////////////////
+
+// основные цвета
+$text-color: #333333;
+$accent-color: #66c05d;
+$bg-light-grey: #e5e5e5;
+
+@mixin centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1920px;
+  margin: auto;
+}
+
+.btn {
+  border: 2px solid $accent-color;
+  border-radius: 40px;
+  background-color: #fff;
+}
+
+////////////////////////////////////////
+// БЛОК НАВИГАЦИИ (top-line в макете) //
+////////////////////////////////////////
+
+// стилизация навигации как блока
+.top-line {
+  background-color: $bg-light-grey;
+  height: 50px;
+  @include centerContent();
+}
+// ограничиваем контен на 1110px (как в макете)
+.top-line__w {
+  width: 1110px;
+  @include centerContent();
+}
+// стилизация ссылок
+.top-line a {
+  color: $text-color;
+  margin-right: 30px;
+
+  font-size: 14px;
+  line-height: 19px;
+}
+// мера предосторожности
+.top-line a:last-child {
+  margin-right: 0px;
+}
+
+///////////////////////////////////
+// HEADER (second-line в макете) //
+///////////////////////////////////
+
+.second-line__header {
+  background-color: #fff;
+  color: #000;
+  // @include centerContent();
+}
+
+.second-line__top {
+  @include centerContent();
+  gap: 515px;
+
+  margin: 20px 0;
+}
+
+.second-line__logo {
+  @include centerContent();
+  gap: 20px;
+}
+
+.second-line__logo p {
+  font-weight: bold;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+
+  color: $accent-color;
+}
+
+.second-line__conect {
+  @include centerContent();
+  gap: 60px;
+}
+
+.second-line__conect p {
+  font-size: 16px;
+}
+
+// стили кнопки
+.second-line__button {
+  padding: 10px 24px;
+  font-size: 14px;
+  transition: ease-out 0.2s;
+}
+
+.second-line__button:hover {
+  background-color: $accent-color;
+  transition: ease-in 0.2s;
+}
+
+.second-line__line {
+  border: 1px solid #efefef;
+}
+
+.second-line__main-menu {
+  margin: 30px 0px;
+  @include centerContent();
+}
+
+.second-line__main-menu a {
+  margin-right: 40px;
+  color: #000;
+
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.second-line__main-menu a:last-child {
+  margin-right: 0px;
+}
+
+////////////////////////////
+// КРЕСЛО (sale в макете) //
+////////////////////////////
+
+.sale {
+  background-color: $accent-color;
+  height: 600px;
+
+  @include centerContent();
+}
+
+.sale__w {
+  width: 1110px;
+  display: flex;
+  align-items: center;
+}
+
+.sale__img {
+  display: grid;
+  grid-template-columns: 859px;
+  position: relative;
+}
+
+.sale__img-big-circle {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sale__img-small-circle {
+  grid-column: 1;
+  grid-row: 1;
+  margin-left: 90px;
+}
+
+.sale__img-chair {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 25px;
+  margin-left: 130px;
+}
+
+.sale__info {
+  margin-right: 15px;
+}
+
+.sale__info h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 40px;
+}
+
+.sale__info p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  width: 308px;
+  margin-bottom: 40px;
+}
+
+.sale__button {
+  padding: 10px 24px;
+  font-size: 14px;
+  background: $accent-color;
+  color: #fff;
+  border: 2px solid #ffffff;
+  border-radius: 40px;
+  width: 170px;
+  letter-spacing: 0.05em;
+}
